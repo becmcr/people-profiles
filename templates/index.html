@@ -1,11 +1,23 @@
 {% extends "base.html" %}
+{% block title %}Cards{% endblock %}
+
 {% block content %}
+    <div id="container">
+        <div id="filters" class="button-group">
+          <button data-filter="*">Show all</button>
+          <button data-filter=".guilherme">Guilherme</button>
+          <button data-filter=".claudio">Claudio</button>
+          <button data-filter=".developer">Developer</button>
+          <button data-filter=".designer">Designer</button>
+        </div>
 
-{% for person in people %}
-
-<h1>{{person.name}}</h1>
-<h2>{{person.job}}</h2>
-
-{% endfor %}
-
+        <div id="cards-wrapper">
+        {% for person in people*11 %}
+            <div class="card {{ person.name|lower }} {{ person.job|lower }}">
+                <h1>{{ person.name }}</h1>
+                <h2>{{ person.job }}</h2>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
 {% endblock %}

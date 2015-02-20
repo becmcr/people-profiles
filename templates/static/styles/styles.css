@@ -1,14 +1,6 @@
 body {
   background-color: rgba(0, 0, 0, 0.03); }
 
-header {
-  width: 100%;
-  height: 60px;
-  background-color: #9D2232;
-  position: fixed;
-  top: 0;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); }
-
 .b-main-section {
   padding: 50px 0; }
 
