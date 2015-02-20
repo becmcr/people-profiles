@@ -1,7 +1,50 @@
 ---
 
-- name: Claudio
-  job: Designer
-
-- name: Guilherme
-  job: Developer
+- name: Maryam Mir
+  meta:
+    created_in: 02/19/2015
+    updated_in: 02/19/2015
+    ip: 89.148.39.71
+  tagline: Storytelling-strategist passionate about the power of narrative to evoke empathy and education to transform lives
+  bio: "I am a graduate of the Wharton School of Business at the University of Pennsylvania, receiving a Bachelor of Science in Economics with a concentration in Marketing and a minor in English. I am currently working in Dubai as a Junior Strategist at Wolff Olins, a global brand consultancy focused on creating positive impact, both commercial and social. My past work experience include internships with Deloitte Consulting LLP, Ernst & Young and DDB Worldwide Communications Inc. I have also worked for two years as a fellow for the Wharton Social Impact Initiative where I helped to start-up a youth run social enterprise, Rebel Ventures, which aims to teach high-school students about entrepreneurship and nutritional justice through the management of a granola bar business. I am passionate about the intersection of storytelling and education, and always searching for opportunities to work with underserved youth. I also care deeply about creating safe spaces, experiences and communities that encourage curiosity, compassion and connection."
+  image: maryan-mir.jpg
+  year: 2014
+  affiliation: PSIH Fellow
+  job: Junior Strategist at Wolff Olins
+  contact:
+    email: maryam.mir92@gmail.com
+    publish_email: true
+    facebook:
+    publish_facebook: false
+    linkedin: https://www.linkedin.com/in/maryammir
+    publish_linkedin: true
+    twitter: 
+    publish_twitter: false
+    website: 
+    publish_website: true
+  location:
+    city: Dubai
+    state:
+    country: United Arab Emirates
+  impact_areas:
+    - Education
+    - "Employment & Labor"
+    - Gender Equality
+    - Media
+    - Mental Health
+    - Youth Development
+  expertise:
+    - "Communication Strategy & PR"
+    - Consulting
+    - Event Production
+    - Project Management
+    - Social Media
+    - Strategic Planning
+    - Teambuilding
+    - Videography
+    - Writing
+  geographic_interest:
+    - "Middle East & North Africa"
+    - South America
+    - South Asia
+    - Global
