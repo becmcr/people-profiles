@@ -1,15 +1,21 @@
 $(document).ready(function() {
     $(document).foundation();
 
-    $('#cards-wrapper').isotope({
-        itemSelector: '.card',
+    $('.b-cards-wrapper').isotope({
+        itemSelector: '.b-card',
         layoutMode: 'fitRows'
     });
 
-    $('#filters').on( 'click', 'button', function() {
-        var filterValue = $(this).attr('data-filter');
+    $('.e-filter-tag').click(function() {
+        var filterValue = '';
 
-        $('#cards-wrapper').isotope({ filter: filterValue });
+        $(this).toggleClass('m-active');
+
+        $('.e-filter-tag.m-active').each(function() {
+            filterValue += $(this).attr('data-filter');
+        });
+
+        $('.b-cards-wrapper').isotope({ filter: filterValue || '*'});
 
         return false;
     });

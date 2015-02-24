@@ -23,14 +23,60 @@ body {
   background-color: rgba(0,0,0,0.03);
 }
 
-// header {
-//   width: 100%;
-//   height: 60px;
-//   background-color: $red;
-//   position: fixed;
-//   top: 0;
-//   @include dropshadow-top-nav;
-// }
+
+.b-top-header {
+    top: 0;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+    background-color: rgba(255,255,255,0.95);
+    line-height: 80px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    > a {
+        width: 20%;
+        display: inline-block;
+        margin-left: 5%;
+        padding: 0 10px;
+        vertical-align: top;
+
+        img {
+            max-height: 60px;
+        }
+    }
+
+    nav {
+        width: 70%;
+        display: inline-block;
+        padding: 0 10px;
+        text-align: right;
+
+        a {
+            display: inline-block;
+            padding-left: 9px;
+            color: #555;
+            font-size: 11px;
+            white-space: nowrap;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            &:hover, &.selected {
+                color: #9d2231;
+            }
+
+            + a::before {
+                content: '•';
+                margin-right: 14px;
+                color: #222;
+            }
+        }
+    }
+}
 
 // Crap
 .b-main-section {
@@ -53,7 +99,7 @@ body {
 .b-filter-section {
   background-color: rgba(0,0,0,0.1);
   overflow: hidden;
-  padding: 80px 0 20px;
+  padding: 100px 0 20px;
   @include innershadow;
 
 
@@ -68,29 +114,27 @@ body {
 }
 
 .b-filter-block {
-  clear: both;
-  padding: 0;
-  padding-top: 10px;
-  @include chizel-line;
+  td {
+    @include chizel-line;
+  }
 
-
-  h2 { 
+  td:first-child {
     font-size: 1.1rem;
-    float: left;
-    margin-right: 30px;
+    padding-top: 15px;
+    padding-right: 30pxb-cards-wrapper;
     width: 100px;
-
   }
 
   .e-filter-tag {
     display: inline-block;
-    padding: 4px 12px 5px;
+    padding: 5px 12px 4px;
+    margin-top: 15px;
     border-radius: 2px;
     line-height: 1;
     background-color: rgba(0,0,0,0.1);
     color: rgba(0,0,0,0.8);
     cursor: pointer;
-    
+
     &:hover {
       background-color: rgba(0,0,0,0.3);
     }
@@ -102,14 +146,28 @@ body {
   }
 }
 
+.b-cards-wrapper {
+    &.spaceless {
+        font-size: 0;
+    }
 
+    &.spaceless > * {
+        font-size: 100%;
+    }
+}
 
 .b-card {
-  width: 25%;
+  width: 24%;
+  display: inline-block;
   border: 1px solid rgba(0,0,0,0.3);
+  margin: 0 13px 20px 0;
   background-color: white;
+  vertical-align: top;
   @include dropshadow;
 
+  &:nth-child(4n+4) {
+    margin-right: 0;
+  }
 
   .e-card-picture {
     background-color: gray;
@@ -119,10 +177,12 @@ body {
     height: 0;
     padding-bottom: 60%;
     position: relative;
-    
-    h1 {
+
+    h2 {
       position: absolute;
       bottom: 0;
+      max-width: 100%;
+      overflow: hidden;
       font-size: 1.2rem;
       color: white;
       padding: 10px 20px 5px;
@@ -133,12 +193,23 @@ body {
     }
   }
 
-  .e-card-content {
-    padding: 10px 20px;
+  h3 {
+    margin: 10px 20px;
+    color: #222;
+    font-size: 1rem;
+  }
 
-    p {
-      margin: 0;
-      line-height: 1.4;
-    } 
+  h4 {
+    margin: 10px 20px;
+    color: #444;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+
+  p {
+    margin: 10px 20px;
+    line-height: 1.4;
+    font-size: 0.8rem;
+    color: #777;
   }
 }

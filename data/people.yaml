@@ -1,50 +1,146 @@
 ---
-
-- name: Maryam Mir
-  meta:
-    created_in: 02/19/2015
-    updated_in: 02/19/2015
-    ip: 89.148.39.71
-  tagline: Storytelling-strategist passionate about the power of narrative to evoke empathy and education to transform lives
-  bio: "I am a graduate of the Wharton School of Business at the University of Pennsylvania, receiving a Bachelor of Science in Economics with a concentration in Marketing and a minor in English. I am currently working in Dubai as a Junior Strategist at Wolff Olins, a global brand consultancy focused on creating positive impact, both commercial and social. My past work experience include internships with Deloitte Consulting LLP, Ernst & Young and DDB Worldwide Communications Inc. I have also worked for two years as a fellow for the Wharton Social Impact Initiative where I helped to start-up a youth run social enterprise, Rebel Ventures, which aims to teach high-school students about entrepreneurship and nutritional justice through the management of a granola bar business. I am passionate about the intersection of storytelling and education, and always searching for opportunities to work with underserved youth. I also care deeply about creating safe spaces, experiences and communities that encourage curiosity, compassion and connection."
-  image: maryan-mir.jpg
-  year: 2014
-  affiliation: PSIH Fellow
-  job: Junior Strategist at Wolff Olins
-  contact:
-    email: maryam.mir92@gmail.com
-    publish_email: true
-    facebook:
-    publish_facebook: false
-    linkedin: https://www.linkedin.com/in/maryammir
-    publish_linkedin: true
-    twitter: 
-    publish_twitter: false
-    website: 
-    publish_website: true
-  location:
-    city: Dubai
-    state:
-    country: United Arab Emirates
-  impact_areas:
-    - Education
-    - "Employment & Labor"
-    - Gender Equality
-    - Media
-    - Mental Health
-    - Youth Development
-  expertise:
-    - "Communication Strategy & PR"
-    - Consulting
-    - Event Production
-    - Project Management
-    - Social Media
-    - Strategic Planning
-    - Teambuilding
-    - Videography
-    - Writing
-  geographic_interest:
-    - "Middle East & North Africa"
-    - South America
-    - South Asia
-    - Global
+-
+    name: Maryam
+    last: Mir
+    profile: Storytelling-strategist passionate about the power of narrative to evoke empathy and education to transform lives
+    bio: "I am a graduate of the Wharton School of Business at the University of Pennsylvania, receiving a Bachelor of Science in Economics with a concentration in Marketing and a minor in English. I am currently working in Dubai as a Junior Strategist at Wolff Olins, a global brand consultancy focused on creating positive impact, both commercial and social. My past work experience include internships with Deloitte Consulting LLP, Ernst & Young and DDB Worldwide Communications Inc. I have also worked for two years as a fellow for the Wharton Social Impact Initiative where I helped to start-up a youth run social enterprise, Rebel Ventures, which aims to teach high-school students about entrepreneurship and nutritional justice through the management of a granola bar business. I am passionate about the intersection of storytelling and education, and always searching for opportunities to work with underserved youth. I also care deeply about creating safe spaces, experiences and communities that encourage curiosity, compassion and connection."
+    image: maryan-mir.jpg
+    experience: B.S. in Economics, University of Pennsylvania (2014)
+    year: 2014
+    affiliation: PSIH Fellow
+    job: Junior Strategist at Wolff Olins
+    contact:
+        email: maryam.mir92@gmail.com
+        publish_email: true
+        facebook:
+        publish_facebook: false
+        linkedin: https://www.linkedin.com/in/maryammir
+        publish_linkedin: true
+        twitter:
+        publish_twitter: false
+        website:
+        publish_website: true
+    location:
+        city: Dubai
+        state:
+        country: United Arab Emirates
+    impact_areas:
+        - Education
+        - "Employment & Labor"
+        - Gender Equality
+        - Media
+        - Mental Health
+        - Youth Development
+    expertise:
+        - "Communication Strategy & PR"
+        - Consulting
+        - Event Production
+        - Project Management
+        - Social Media
+        - Strategic Planning
+        - Teambuilding
+        - Videography
+        - Writing
+    geographic_interest:
+        - "Middle East & North Africa"
+        - South America
+        - South Asia
+        - Global
+-
+    name: Arielle
+    last: Brousse
+    profile: Nonprofit development and communications specialist. Listener, speaker, teller of stories.
+    bio: 'Arielle Brousse is a nine-year veteran of the Philadelphia nonprofit scene, with her work focusing on development and donor communications. She believes strongly in the efficacy of using storytelling principles to connect philanthropists with causes and projects that appeal to them, encouraging a sense of organizational stewardship. She currently serves as the Assistant Director for Development at Kelly Writers House, and as a Teaching Team member for the Executive Program in Social Impact Strategy; prior to that, she worked at The Franklin Institute as a Grantwriter and Development Communications Coordinator. She is a member of Phi Beta Kappa, a volunteer with Philly Give & Get, the secretary of The Spruce Foundation, and a 2014 Penn Social Impact Fellow. In her spare time, Arielle enjoys yoga, knitting, talking up the importance of children''s books, and especially telling and hearing stories. '
+    experience: "B.A. in Sociology, University of Pennsylvania (2007)\nM.S. in Nonprofit Leadership, University of Pennsylvania (2012)"
+    image: 523_1.jpg
+    affiliation: Staff
+    year: 2014
+    job: Assistant Director for Development at Kelly Writers House
+    city: Philadelphia
+    state: PA
+    country: United States
+    email: arielle@socialimpactstrategy.org
+-
+    name: Shengwei
+    last: Zhao
+    profile: build something great to have a positive impact on others
+    bio: "Shengwei Zhao is a serial entrepreneur. He has keen interest in technology and social entrepreneurship. He recently started a social venture called Tao For Good to foster social change through e-commerce business. Tao For Good is an international social venture which is a charitable crowd-funding shopping platform dedicated to provide the best shopping experience for customers and give back to humanity. He has been involved in various projects and program in social impact space. He is a 2014 StartingBloc New York Fellow, 2014 Penn Social Impact Fellow and a member of 2014 Clinton Global Initiative University. He is the finalist of CMU (Carnegie Mellon University) Summit New Venture Competition and winner of 2104 Clinton Foundation Codeathon. He worked as Data Scientist Consultant of the Center for Social Impact Strategy at the University of Pennsylvania before he works on his social venture. He graduated from the University of Pennsylvania with a Master of Science in Telecommunications and Networking Engineering. \n"
+    experience: M.S. in Telecommunications and Networking Engineering, University of Pennsylvania (2014)
+    image: 273_1.jpg
+    affiliation: PSIH Fellow
+    year: 2014
+    job: Chief Executive Officer at Tao For Good
+    city: Cherry Hill
+    state: NJ
+    country: United States
+    email: magneto.zhao@gmail.com
+-
+    name: Aaron
+    last: Guo
+    profile: Current student passionate about driving change in environmental sustainability through business consulting and strategy development
+    bio: "Aaron is a student at the University of Pennsylvania pursuing a dual-degree in Systems Science Engineering and Finance & Environmental Management through the Jerome Fisher Program in Management and Technology. He has previously worked with Angler Environmental, a regional environmental consulting firm, as well as several sustainability-based initiatives. At Penn, he is also involved with the American Academy of Environmental Engineers and Scientists and other environmentally-focused organizations. Aaron is eager to learn more about the applications of environmental policy and to explore the dynamic field of environmentally-driven business development through The Environ Group, an organization that aims to bring environmental sustainability consulting to businesses at zero risk to the business owner.\n\nOutside of school, he is interested in cooking, photography, and exploring Philadelphia. He can be reached at aaronguo@wharton.upenn.edu."
+    experience: "B.S. in Economics, The Wharton School University of Pennsylvania (2017)\nB.S.E. in Systems Engineering, The School of Engineering and Applied Science, University of Pennsylvania (2017)"
+    image: guo_aaron_photo.jpg
+    affiliation: PSIH Fellow
+    year: 2014
+    job: Student at the University of Pennsylvania
+    city: Philadelphia
+    state: Pennsylvania
+    country: United States
+    email: aaronguo@wharton.upenn.edu
+-
+    name: Eric
+    last: De Feo
+    profile: Entrepreneur focused on urban farming and collaborating living
+    bio: "Inspired by the ability of design to empower communities, Eric completed his architecture master's thesis on a holistic approach to retrofitting existing underserved dwellings, including a scalable agricultural product that can sustainably produce food, grow local economies, and foster communities. Carrying this project forward, Eric has been working on two concurrent projects: Ohneka Farms and The Canopy. Ohneka Farms currently designs ROOT, a smart device that allows you to grow a variety of plants with minimal upkeep. The Canopy is a curated co-living and co-working space in Oakland, CA. Eric plans to merge these projects into future mixed-use real estate developments that create healthier and more connected communities. \n\nEric has a background in designing projects for informal settlements abroad, including working with the Kounkuey Design Initiative in Nairobi and Gensler in Thailand. He holds degrees in history, architecture and product design."
+    experience: "B.A. History, Northwestern University ('09)\nM.Arch, University of Pennsylvania ('13)\nM.S.E. Integrated Product Design ('13)"
+    image: eric.jpg
+    affiliation: PSIH Fellow
+    year: 2013
+    job: Co-Founder, Ohneka Farms
+    city: New York
+    state: NY
+    country: United States
+    email: eric@ohnekafarms.com
+-
+    name: Will
+    last: Morris
+    profile: Social Entrepreneur
+    bio: 'Will Morris is the Founder and CEO of EdConnective. He is a current member of the Education Design Studio and a former member of the Wharton Venture Initiation Program and the Penn Social Impact House. Will received his Masters of Education from the University of Pennsylvania''s Graduate School of Education. There he researched instructional coaching as a promising lever of teacher quality. Before UPenn, Will spent a year working with a cohort of 30 African American freshmen as an Urban Prep Fellow in a Chicago Charter School. During his year in Chicago, Will became a Starting Bloc Social Innovation Fellow and participated in a social entrepreneurship institute that sparked his desire to create systemic impact through social innovation. Before Chicago, Will obtained his bachelors from the College of William and Mary where he realized the education system was the variable he would leverage to impact the life outcomes of historically marginalized populations. '
+    experience: B.S. in Economics, University of Pennsylvania (2012)
+    image: penn_edsi_demo_day_jan_30th_2015_249.jpg
+    affiliation: PSIH Fellow
+    year: 2013
+    job: Founder & CEO at EdConnective
+    city: Richmond
+    state: VA
+    country: United States
+    email: willmorris@edconnective.com
+-
+    name: Luke
+    last: Kelly
+    profile: Fresh faced filmmaker just trying to tell a good story.
+    bio: pss
+    experience: B.S. in Economics, University of Pennsylvania (2014)
+    image: mk_fairygarchar_7119810975.jpeg.jpg
+    affiliation: PSIH Fellow
+    year: 2014
+    job:
+    city: Burbank
+    state: CA
+    country: United States
+    email: Kellylukej@gmail.com
+-
+    name: Kyle
+    last: Klopcic
+    profile: Impact investor passionate about closing the achievement gap.
+    bio: Investment banking at Lehman Brothers. Corporate strategy and business development at Disney. Operations and finance at an all-boys charter school in Brooklyn affiliated with Uncommon Schools. Now working at the Colorado Impact Fund, which provides capital to Colorado-based companies where community impact is valued alongside financial returns.
+    experience: "BA in Economics from Harvard University (2006)\nMBA from Wharton (2014)"
+    image: 39692_744672837501_590825_n.jpg
+    affiliation: PSIH Fellow
+    year: 2013
+    job: Associate at the Colorado Impact Fund
+    city: Denver
+    state: CO
+    country: United States
+    email: klopcic@post.harvard.edu

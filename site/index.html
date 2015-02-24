@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="static/img/favicon.ico?v=2" />
         <link rel="stylesheet" href="static/assets/foundation/css/foundation.css" />
-        <link rel="stylesheet" href="./static/assets/material-design-iconic-font/css/material-design-iconic-font.min.css">
         <link rel="stylesheet" href="static/styles/base.css" />
         <link rel="stylesheet" href="static/styles/styles.css" />
         <script src="static/assets/foundation/js/vendor/modernizr.js"></script>
@@ -19,22 +18,22 @@
             <!-- Scripts for specific pages -->
         
 
-        <title>Cards</title>
+        <title>Profiles</title>
 
         
     </head>
 
     <body>
-        <header id="top-header">
+        <header class="b-top-header">
             <a href="http://www.socialimpactstrategy.org/" title="Center for Social Impact Strategy" rel="home">
                 <img src="http://www.socialimpactstrategy.org/wp-content/uploads/2014/10/logo-social-impact-strategy-menu.png" alt="Center for Social Impact Strategy">
             </a>
 
             <nav>
                 <a href="http://www.socialimpactstrategy.org/#section-about-2">About</a>
-                <a href="http://www.socialimpactstrategy.org/#section-overview" class="selected">What We Do</a>
+                <a href="http://www.socialimpactstrategy.org/#section-overview">What We Do</a>
                 <a href="http://www.socialimpactstrategy.org/#section-testimonials">Testimonials</a>
-                <a href="http://www.socialimpactstrategy.org/#team-2">Profiles</a>
+                <a href="http://www.socialimpactstrategy.org/#team-2" class="selected">Profiles</a>
                 <a href="http://www.socialimpactstrategy.org/#section-team-2">Team</a>
                 <a href="http://www.socialimpactstrategy.org/past-work/">Past Work</a>
                 <a href="http://www.socialimpactstrategy.org/#section-contact-us-2">Contact Us</a>
@@ -42,74 +41,201 @@
         </header>
 
         
-    <div id="container">
-        <div id="filters" class="button-group">
-          <button data-filter="*">Show all</button>
-          <button data-filter=".guilherme">Guilherme</button>
-          <button data-filter=".claudio">Claudio</button>
-          <button data-filter=".developer">Developer</button>
-          <button data-filter=".designer">Designer</button>
-        </div>
+    <section class="b-filter-section">
+        <div class="row">
+            <div class="column large-12">
+                <span class="b-exp and-trigger md-unfold-less"></span>
 
-        <div id="cards-wrapper">
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
+                <h1>Filters</h1>
+
+                <table cellspacing="0">
+                    
+                        <tr class="b-filter-block">
+                            <td>Year</td>
+
+                            <td>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=2013]">2013</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=2014]">2014</span>
+                                
+                            </td>
+                        </tr>
+                    
+
+                    
+                        <tr class="b-filter-block">
+                            <td>Affiliation</td>
+
+                            <td>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=psih-fellow]">PSIH Fellow</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=staff]">Staff</span>
+                                
+                            </td>
+                        </tr>
+                    
+
+                    
+                        <tr class="b-filter-block">
+                            <td>Impact Areas</td>
+
+                            <td>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=education]">Education</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=employment-labor]">Employment & Labor</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=gender-equality]">Gender Equality</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=media]">Media</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=mental-health]">Mental Health</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=youth-development]">Youth Development</span>
+                                
+                            </td>
+                        </tr>
+                    
+
+                    
+                        <tr class="b-filter-block">
+                            <td>Expertise</td>
+
+                            <td>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=communication-strategy-pr]">Communication Strategy & PR</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=consulting]">Consulting</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=event-production]">Event Production</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=project-management]">Project Management</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=social-media]">Social Media</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=strategic-planning]">Strategic Planning</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=teambuilding]">Teambuilding</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=videography]">Videography</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=writing]">Writing</span>
+                                
+                            </td>
+                        </tr>
+                    
+
+                    
+                        <tr class="b-filter-block">
+                            <td>Geographic Interest</td>
+
+                            <td>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=global]">Global</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=middle-east-north-africa]">Middle East & North Africa</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=south-america]">South America</span>
+                                
+                                    <span class="e-filter-tag" data-filter="[data-filters~=south-asia]">South Asia</span>
+                                
+                            </td>
+                        </tr>
+                    
+                </table>
             </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
-            <div class="card maryam mir junior strategist at wolff olins">
-                <h1>Maryam Mir</h1>
-                <h2>Junior Strategist at Wolff Olins</h2>
-            </div>
-        
         </div>
-    </div>
+    </section>
+
+    <section class="b-main-section">
+        <div class="row">
+            <div class="b-cards-wrapper column large-12 spaceless">
+                
+                    <div class="b-card" data-filters="gender-equality consulting psih-fellow teambuilding communication-strategy-pr media global south-asia social-media writing event-production mental-health project-management middle-east-north-africa education strategic-planning youth-development 2014 videography south-america employment-labor">
+                        <div class="e-card-picture" style="background-image: url(./static/img/maryan-mir.jpg)">
+                            <h2>Maryam Mir</h2>
+                        </div>
+
+                        <h3>PSIH Fellow</h3>
+                        <h4>Junior Strategist at Wolff Olins</h4>
+                        <p>Storytelling-strategist passionate about the power of narrative to evoke empathy and education to transform lives</p>
+                    </div>
+                
+                    <div class="b-card" data-filters="2014 staff">
+                        <div class="e-card-picture" style="background-image: url(./static/img/523_1.jpg)">
+                            <h2>Arielle Brousse</h2>
+                        </div>
+
+                        <h3>Staff</h3>
+                        <h4>Assistant Director for Development at Kelly Writers House</h4>
+                        <p>Nonprofit development and communications specialist. Listener, speaker, teller of stories.</p>
+                    </div>
+                
+                    <div class="b-card" data-filters="2014 psih-fellow">
+                        <div class="e-card-picture" style="background-image: url(./static/img/273_1.jpg)">
+                            <h2>Shengwei Zhao</h2>
+                        </div>
+
+                        <h3>PSIH Fellow</h3>
+                        <h4>Chief Executive Officer at Tao For Good</h4>
+                        <p>build something great to have a positive impact on others</p>
+                    </div>
+                
+                    <div class="b-card" data-filters="2014 psih-fellow">
+                        <div class="e-card-picture" style="background-image: url(./static/img/guo_aaron_photo.jpg)">
+                            <h2>Aaron Guo</h2>
+                        </div>
+
+                        <h3>PSIH Fellow</h3>
+                        <h4>Student at the University of Pennsylvania</h4>
+                        <p>Current student passionate about driving change in environmental sustainability through business consulting and strategy development</p>
+                    </div>
+                
+                    <div class="b-card" data-filters="psih-fellow 2013">
+                        <div class="e-card-picture" style="background-image: url(./static/img/eric.jpg)">
+                            <h2>Eric De Feo</h2>
+                        </div>
+
+                        <h3>PSIH Fellow</h3>
+                        <h4>Co-Founder, Ohneka Farms</h4>
+                        <p>Entrepreneur focused on urban farming and collaborating living</p>
+                    </div>
+                
+                    <div class="b-card" data-filters="psih-fellow 2013">
+                        <div class="e-card-picture" style="background-image: url(./static/img/penn_edsi_demo_day_jan_30th_2015_249.jpg)">
+                            <h2>Will Morris</h2>
+                        </div>
+
+                        <h3>PSIH Fellow</h3>
+                        <h4>Founder & CEO at EdConnective</h4>
+                        <p>Social Entrepreneur</p>
+                    </div>
+                
+                    <div class="b-card" data-filters="2014 psih-fellow">
+                        <div class="e-card-picture" style="background-image: url(./static/img/mk_fairygarchar_7119810975.jpeg.jpg)">
+                            <h2>Luke Kelly</h2>
+                        </div>
+
+                        <h3>PSIH Fellow</h3>
+                        <h4>None</h4>
+                        <p>Fresh faced filmmaker just trying to tell a good story.</p>
+                    </div>
+                
+                    <div class="b-card" data-filters="psih-fellow 2013">
+                        <div class="e-card-picture" style="background-image: url(./static/img/39692_744672837501_590825_n.jpg)">
+                            <h2>Kyle Klopcic</h2>
+                        </div>
+
+                        <h3>PSIH Fellow</h3>
+                        <h4>Associate at the Colorado Impact Fund</h4>
+                        <p>Impact investor passionate about closing the achievement gap.</p>
+                    </div>
+                
+            </div>
+        </div>
+    </section>
 
     </body>
 </html>
