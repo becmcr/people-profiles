@@ -19,10 +19,17 @@ $red: #9D2232;
   background: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.4)); /* Opera 11.10+ */
 }
 
+@mixin spaceless {
+  font-size: 0;
+
+  > * {
+      font-size: 100%;
+  }
+}
+
 body {
   background-color: rgba(0,0,0,0.03);
 }
-
 
 .b-top-header {
     top: 0;
@@ -121,7 +128,7 @@ body {
   td:first-child {
     font-size: 1.1rem;
     padding-top: 15px;
-    padding-right: 30pxb-cards-wrapper;
+    padding-right: 30px;
     width: 100px;
   }
 
@@ -147,17 +154,11 @@ body {
 }
 
 .b-cards-wrapper {
-    &.spaceless {
-        font-size: 0;
-    }
-
-    &.spaceless > * {
-        font-size: 100%;
-    }
+  @include spaceless;
 }
 
 .b-card {
-  width: 24%;
+  width: 23.6%;
   display: inline-block;
   border: 1px solid rgba(0,0,0,0.3);
   margin: 0 13px 20px 0;
@@ -165,11 +166,8 @@ body {
   vertical-align: top;
   @include dropshadow;
 
-  &:nth-child(4n+4) {
-    margin-right: 0;
-  }
-
   .e-card-picture {
+    display: block;
     background-color: gray;
     background-size: cover;
     background-repeat: no-repeat;
@@ -181,7 +179,7 @@ body {
     h2 {
       position: absolute;
       bottom: 0;
-      max-width: 100%;
+      width: 100%;
       overflow: hidden;
       font-size: 1.2rem;
       color: white;
@@ -212,4 +210,96 @@ body {
     font-size: 0.8rem;
     color: #777;
   }
+}
+
+.b-profile-section {
+  display: none;
+}
+
+.b-profile {
+  &.reveal-modal {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .b-side-bar {
+    display: inline-block;
+    width: 23%;
+    margin: 20px -5px 0 0;
+    padding: 0 20px 20px 10px;
+    border: 1px solid #bbb;
+    background-color: rgba(255,255,255,0.85);
+    text-align: right;
+
+    img {
+      width: 365px;
+      max-height: 365px;
+    }
+
+    .m-title {
+      margin: 20px 0 10px;
+        color: #c90000;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .m-item {
+      font-size: 14px;
+      color: #333;
+    }
+  }
+
+  .b-main {
+      position: relative;
+      display: inline-block;
+      width: 76.5%;
+      border: 1px solid #bbb;
+      vertical-align: top;
+      background-color: white;
+      @include dropshadow-top-nav;
+
+    .b-left {
+      width: 49.5%;
+      display: inline-block;
+      padding: 0 10px 20px 0;
+      vertical-align: top;
+
+      .m-profile {
+        margin: 20px 0 0 30px;
+        color: #949494;
+        font-size: 22px;
+        line-height: 1.4;
+        font-weight: 300px;
+      }
+    }
+
+    .b-right {
+      width: 49.5%;
+      display: inline-block;
+      padding: 20px;
+      vertical-align: top;
+
+      .m-name {
+        color: #c90000;
+        font-weight: 300;
+      }
+
+      .m-job {
+        color: #949494;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .m-bio {
+        color: #949494;
+      }
+    }
+  }
+}
+
+.reveal-modal-bg {
+  background-color: transparent;
 }

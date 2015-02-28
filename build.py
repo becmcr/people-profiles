@@ -24,7 +24,7 @@ def loadAcademyData():
 
         for key in person.keys():
             key = key.lower()
-            val = person[key]
+            val = person[key] or '&nbsp;'
 
             if key.lower() == 'year':
                 dic[key] = str(val)

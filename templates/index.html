@@ -76,12 +76,12 @@
 
     <section class="b-main-section">
         <div class="row">
-            <div class="b-cards-wrapper column large-12 spaceless">
+            <div class="b-cards-wrapper column large-12 spaceles">
                 {% for person in people %}
                     <div class="b-card" data-filters="{{ person.filters }}">
-                        <div class="e-card-picture" style="background-image: url(./static/img/{{ person.image }})">
+                        <a href="#" class="e-card-picture" style="background-image: url(./static/img/{{ person.image }})" data-reveal-id="profile-{{ loop.index }}">
                             <h2>{{ person.name }} {{ person.last }}</h2>
-                        </div>
+                        </a>
 
                         <h3>{{ person.affiliation }}</h3>
                         <h4>{{ person.job }}</h4>
@@ -90,5 +90,78 @@
                 {% endfor %}
             </div>
         </div>
+    </section>
+
+    <section class="b-profile-section">
+        {% for person in people %}
+            <div id="profile-{{ loop.index }}" class="b-profile reveal-modal" data-reveal>{% filter trim %}
+                <div class="b-side-bar">
+                    {% if person.impact_areas %}
+                        <h2 class="m-title">Impact Areas</h2>
+
+                        {% for x in person.impact_areas %}
+                            <div class="m-item">{{ x }}</div>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if person.expertise %}
+                        <h2 class="m-title">Expertise</h2>
+
+                         {% for x in person.expertise %}
+                            <div class="m-item">{{ x }}</div>
+                         {% endfor %}
+                    {% endif %}
+
+                    {% if person.geographic_interest %}
+                        <h2 class="m-title">Geographic Interest</h2>
+
+                         {% for x in person.geographic_interest %}
+                            <div class="m-item">{{ x }}</div>
+                         {% endfor %}
+                    {% endif %}
+                </div>
+
+                <div class="b-main">
+                    <div class="b-left">
+                        <img src="./static/img/{{ person.image }}" alt="Profile picture">
+
+                        <p class="m-profile">{{ person.profile }}</p>
+                    </div>
+
+                    <div class="b-right">
+                        <h2 class="m-name">{{ person.name }} {{ person.last }}</h2>
+                        <h3 class="m-job">{{ person.job }}</h3>
+
+                        <div class="b-contact">
+                            {% if person.email %}
+                                <span class="e-email">{{ person.email }}</span>
+                            {% endif %}
+
+                            {% if person.facebook %}
+                                <span class="e-facebook">{{ person.facebook }}</span>
+                            {% endif %}
+
+                            {% if person.linkedin %}
+                                <span class="e-linkedin">{{ person.linkedin }}</span>
+                            {% endif %}
+
+                            {% if person.twitter %}
+                                <span class="e-twitter">{{ person.twitter }}</span>
+                            {% endif %}
+
+                            {% if person.gplus %}
+                                <span class="e-gplus">{{ person.gplus }}</span>
+                            {% endif %}
+
+                            {% if person.website %}
+                                <span class="e-website">{{ person.website }}</span>
+                            {% endif %}
+                        </div>
+
+                        <p class="m-bio">{{ person.bio }}</p>
+                    </div>
+                </div>{% endfilter %}
+            </div>
+        {% endfor %}
     </section>
 {% endblock %}
