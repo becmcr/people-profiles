@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
-  background-color: rgba(0, 0, 0, 0.03); }
+  background-color: rgba(0, 0, 0, 0.03);
+  overflow-y: scroll; }
 
 .b-top-header {
   top: 0;
@@ -43,58 +44,67 @@ body {
         margin-right: 14px;
         color: #222; }
 
-.b-main-section {
-  padding: 50px 0; }
+.b-content .inner-wrap {
+  min-height: 100vh;
+  padding-top: 80px; }
+  .b-content .inner-wrap .exit-off-canvas {
+    background-color: transparent;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); }
+.b-content.move-right .inner-wrap {
+  -webkit-transform: translate3d(18rem, 0, 0);
+  -moz-transform: translate3d(18rem, 0, 0);
+  -ms-transform: translate3d(18rem, 0, 0);
+  -o-transform: translate3d(18rem, 0, 0);
+  transform: translate3d(18rem, 0, 0); }
 
-.b-expand-trigger {
-  position: absolute;
-  right: 0;
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.4);
-  cursor: pointer; }
-  .b-expand-trigger:hover {
-    color: #9D2232; }
-
-.b-filter-section {
-  background-color: rgba(0, 0, 0, 0.1);
+.b-offcanvas {
+  width: 18rem;
+  padding: 80px 20px 20px;
   overflow: hidden;
-  padding: 100px 0 20px;
-  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.3); }
-  .b-filter-section h1 {
-    font-size: 1.3rem;
-    text-transform: uppercase;
+  background-color: white;
+  text-align: right; }
+  .b-offcanvas .m-filter-name {
+    min-width: 100px;
+    margin-top: 15px;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #9D2232;
-    margin: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
-    padding-bottom: 15px; }
+    text-transform: uppercase; }
+  .b-offcanvas .b-item + .b-item {
+    margin-top: 10px; }
+  .b-offcanvas .e-filter-tag {
+    display: inline-block;
+    padding: 5px 12px 4px;
+    border-radius: 2px;
+    line-height: 1;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.8);
+    cursor: pointer; }
+    .b-offcanvas .e-filter-tag:hover {
+      background-color: rgba(0, 0, 0, 0.3); }
+    .b-offcanvas .e-filter-tag.m-active {
+      background-color: #9D2232;
+      color: white; }
 
-.b-filter-block td {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1) inset;
-  padding-bottom: 15px; }
-.b-filter-block td:first-child {
-  font-size: 1.1rem;
-  padding-top: 15px;
-  padding-right: 30px;
-  width: 100px; }
-.b-filter-block .e-filter-tag {
-  display: inline-block;
-  padding: 5px 12px 4px;
-  margin-top: 15px;
-  border-radius: 2px;
-  line-height: 1;
-  background-color: rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.8);
-  cursor: pointer; }
-  .b-filter-block .e-filter-tag:hover {
-    background-color: rgba(0, 0, 0, 0.3); }
-  .b-filter-block .e-filter-tag.m-active {
-    background-color: #9D2232;
-    color: white; }
+.b-main-section {
+  padding: 20px 0 30px; }
+  .b-main-section .left-off-canvas-toggle {
+    padding: 4px 14px;
+    margin: 0;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #9D2232;
+    cursor: pointer; }
+    .b-main-section .left-off-canvas-toggle:hover {
+      background-color: rgba(0, 0, 0, 0.3); }
+    .b-main-section .left-off-canvas-toggle.m-active {
+      background-color: #9D2232;
+      color: white; }
 
 .b-cards-wrapper {
+  padding: 20px 0 0;
   font-size: 0; }
   .b-cards-wrapper > * {
     font-size: 100%; }
@@ -107,6 +117,20 @@ body {
   background-color: white;
   vertical-align: top;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); }
+  .b-card h3 {
+    margin: 10px 20px;
+    color: #222;
+    font-size: 1rem; }
+  .b-card h4 {
+    margin: 10px 20px;
+    color: #444;
+    font-size: 0.8rem;
+    font-style: italic; }
+  .b-card p {
+    margin: 10px 20px;
+    line-height: 1.4;
+    font-size: 0.8rem;
+    color: #777; }
   .b-card .e-card-picture {
     display: block;
     background-color: gray;
@@ -138,20 +162,6 @@ body {
       /* IE 10 */
       background: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.4));
       /* Opera 11.10+ */ }
-  .b-card h3 {
-    margin: 10px 20px;
-    color: #222;
-    font-size: 1rem; }
-  .b-card h4 {
-    margin: 10px 20px;
-    color: #444;
-    font-size: 0.8rem;
-    font-style: italic; }
-  .b-card p {
-    margin: 10px 20px;
-    line-height: 1.4;
-    font-size: 0.8rem;
-    color: #777; }
 
 .b-profile-section {
   display: none; }
@@ -174,7 +184,7 @@ body {
     max-height: 365px; }
   .b-profile .b-side-bar .m-title {
     margin: 20px 0 10px;
-    color: #c90000;
+    color: #9D2232;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold; }
@@ -199,7 +209,7 @@ body {
       color: #949494;
       font-size: 22px;
       line-height: 1.4;
-      font-weight: 300px; }
+      font-weight: 300; }
   .b-profile .b-main .b-right {
     width: 49.5%;
     display: inline-block;

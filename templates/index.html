@@ -2,95 +2,73 @@
 {% block title %}Profiles{% endblock %}
 
 {% block content %}
-    <section class="b-filter-section">
-        <div class="row">
-            <div class="column large-12">
-                <span class="b-exp and-trigger md-unfold-less"></span>
+    <div class="off-canvas-wrap b-content" data-offcanvas>
+        <div class="inner-wrap">
+            <aside class="b-offcanvas left-off-canvas-menu">
+                {% if filters.year %}
+                    <h2 class="m-filter-name">Year</h2>
 
-                <h1>Filters</h1>
+                    {% for year in filters.year %}
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ year|slugy }}]">{{ year }}</span></div>
+                    {% endfor %}
+                {% endif %}
 
-                <table cellspacing="0">
-                    {% if filters.year %}
-                        <tr class="b-filter-block">
-                            <td>Year</td>
+                {% if filters.affiliation %}
+                    <h2 class="m-filter-name">Affiliation</h2>
 
-                            <td>
-                                {% for year in filters.year %}
-                                    <span class="e-filter-tag" data-filter="[data-filters~={{ year|slugy }}]">{{ year }}</span>
-                                {% endfor %}
-                            </td>
-                        </tr>
-                    {% endif %}
+                    {% for affiliation in filters.affiliation %}
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ affiliation|slugy }}]">{{ affiliation }}</span></div>
+                    {% endfor %}
+                {% endif %}
 
-                    {% if filters.affiliation %}
-                        <tr class="b-filter-block">
-                            <td>Affiliation</td>
+                {% if filters.impact_areas %}
+                    <h2 class="m-filter-name">Impact Areas</h2>
 
-                            <td>
-                                {% for affiliation in filters.affiliation %}
-                                    <span class="e-filter-tag" data-filter="[data-filters~={{ affiliation|slugy }}]">{{ affiliation }}</span>
-                                {% endfor %}
-                            </td>
-                        </tr>
-                    {% endif %}
+                    {% for area in filters.impact_areas %}
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ area|slugy }}]">{{ area }}</span></div>
+                    {% endfor %}
+                {% endif %}
 
-                    {% if filters.impact_areas %}
-                        <tr class="b-filter-block">
-                            <td>Impact Areas</td>
+                {% if filters.expertise %}
+                    <h2 class="m-filter-name">Expertise</h2>
 
-                            <td>
-                                {% for area in filters.impact_areas %}
-                                    <span class="e-filter-tag" data-filter="[data-filters~={{ area|slugy }}]">{{ area }}</span>
-                                {% endfor %}
-                            </td>
-                        </tr>
-                    {% endif %}
+                    {% for expertise in filters.expertise %}
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ expertise|slugy }}]">{{ expertise }}</span></div>
+                    {% endfor %}
+                {% endif %}
 
-                    {% if filters.expertise %}
-                        <tr class="b-filter-block">
-                            <td>Expertise</td>
+                {% if filters.geographic_interest %}
+                    <h2 class="m-filter-name">Geographic Interest</h2>
 
-                            <td>
-                                {% for expertise in filters.expertise %}
-                                    <span class="e-filter-tag" data-filter="[data-filters~={{ expertise|slugy }}]">{{ expertise }}</span>
-                                {% endfor %}
-                            </td>
-                        </tr>
-                    {% endif %}
+                    {% for interest in filters.geographic_interest %}
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ interest|slugy }}]">{{ interest }}</span></div>
+                    {% endfor %}
+                {% endif %}
+            </aside>
 
-                    {% if filters.geographic_interest %}
-                        <tr class="b-filter-block">
-                            <td>Geographic Interest</td>
+            <main class="b-main-section">
+                <div class="row">
+                    <div><span class="left-off-canvas-toggle">Filters</span></div>
 
-                            <td>
-                                {% for interest in filters.geographic_interest %}
-                                    <span class="e-filter-tag" data-filter="[data-filters~={{ interest|slugy }}]">{{ interest }}</span>
-                                {% endfor %}
-                            </td>
-                        </tr>
-                    {% endif %}
-                </table>
-            </div>
-        </div>
-    </section>
+                    <div class="b-cards-wrapper column large-12">
+                        {% for person in people %}
+                            <div class="b-card" data-filters="{{ person.filters }}">
+                                <a href="#" class="e-card-picture" style="background-image: url(./static/img/{{ person.image }})" data-reveal-id="profile-{{ loop.index }}">
+                                    <h2>{{ person.name }} {{ person.last }}</h2>
+                                </a>
 
-    <section class="b-main-section">
-        <div class="row">
-            <div class="b-cards-wrapper column large-12 spaceles">
-                {% for person in people %}
-                    <div class="b-card" data-filters="{{ person.filters }}">
-                        <a href="#" class="e-card-picture" style="background-image: url(./static/img/{{ person.image }})" data-reveal-id="profile-{{ loop.index }}">
-                            <h2>{{ person.name }} {{ person.last }}</h2>
-                        </a>
-
-                        <h3>{{ person.affiliation }}</h3>
-                        <h4>{{ person.job }}</h4>
-                        <p>{{ person.profile }}</p>
+                                <h3>{{ person.affiliation }}</h3>
+                                <h4>{{ person.job }}</h4>
+                                <p>{{ person.profile }}</p>
+                            </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            </main>
+
+            <a class="exit-off-canvas"></a>
         </div>
-    </section>
+    </div>
 
     <section class="b-profile-section">
         {% for person in people %}
