@@ -10,7 +10,7 @@
         <script src="static/assets/foundation/js/vendor/modernizr.js"></script>
         <script src="static/assets/foundation/js/vendor/jquery.js"></script>
         <script src="static/assets/foundation/js/foundation.min.js"></script>
-        <script src="static/assets/foundation/js/foundation/foundation.offcanvas.js"></script>
+        <script src="static/assets/foundation/js/foundation/foundation.dropdown.js"></script>
         <script src="static/assets/isotope.pkgd.min.js"></script>
         <script src="static/js/scripts.js"></script>
 
@@ -31,13 +31,24 @@
 
             <nav>
                 <a href="http://www.socialimpactstrategy.org/#section-about-2">About</a>
-                <a href="http://www.socialimpactstrategy.org/#section-overview">What We Do</a>
+                <a href="http://www.socialimpactstrategy.org/#section-overview" data-dropdown="hover1" data-options="is_hover:true; hover_timeout:500">What We Do</a>
                 <a href="http://www.socialimpactstrategy.org/#section-testimonials">Testimonials</a>
-                <a href="http://www.socialimpactstrategy.org/#team-2" class="selected">Profiles</a>
+                <a href="http://www.socialimpactstrategy.org/#team-2" class="selected" data-dropdown="hover2" data-options="is_hover:true; hover_timeout:5000">Profiles</a>
                 <a href="http://www.socialimpactstrategy.org/#section-team-2">Team</a>
                 <a href="http://www.socialimpactstrategy.org/past-work/">Past Work</a>
                 <a href="http://www.socialimpactstrategy.org/#section-contact-us-2">Contact Us</a>
             </nav>
+
+            <ul id="hover1" class="small f-dropdown" data-dropdown-content>
+                <li><a href="http://www.socialimpactstrategy.org/executive-program/">Executive Program</a></li>
+                <li><a href="http://www.socialimpactstrategy.org/impact-houses/">Impact Houses</a></li>
+                <li><a href="http://www.socialimpactstrategy.org/research-and-ideas/">Research and Ideas</a></li>
+                <li><a href="http://www.socialimpactstrategy.org/campus-programs-2/">Campus Programs</a></li>
+            </ul>
+
+            <ul id="hover2" class="small f-dropdown" data-dropdown-content>
+                <li><a href="http://www.socialimpactstrategy.org/fellow-profiles/">Global Social Impact House 2015</a></li>
+            </ul>
         </header>
 
         {% block content %}
