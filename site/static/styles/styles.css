@@ -214,11 +214,8 @@ body {
   padding: 0 20px 20px 10px;
   border: 1px solid #bbb;
   background-color: white;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.95);
   text-align: right; }
-  .b-profile .b-side-bar img {
-    width: 365px;
-    max-height: 365px; }
   .b-profile .b-side-bar .m-title {
     margin: 20px 0 10px;
     color: #9D2232;
@@ -238,10 +235,29 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); }
   .b-profile .b-main .b-left {
     width: 49.5%;
+    position: relative;
     display: inline-block;
     padding: 0 10px 20px 0;
     vertical-align: top; }
+    .b-profile .b-main .b-left .e-profile-picture {
+      width: 365px;
+      max-height: 365px; }
+    .b-profile .b-main .b-left .e-open-quotes {
+      position: absolute;
+      margin-top: 10px;
+      left: 15px;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg); }
+    .b-profile .b-main .b-left .e-close-quotes {
+      position: absolute;
+      right: 0;
+      margin-top: -25px; }
     .b-profile .b-main .b-left .m-profile {
+      position: relative;
+      z-index: 2;
       margin: 20px 0 0 30px;
       color: #949494;
       font-size: 22px;

@@ -296,13 +296,8 @@ body {
     padding: 0 20px 20px 10px;
     border: 1px solid #bbb;
     background-color: rgb(255,255,255);
-    background-color: rgba(255,255,255,0.85);
+    background-color: rgba(255,255,255,0.95);
     text-align: right;
-
-    img {
-      width: 365px;
-      max-height: 365px;
-    }
 
     .m-title {
       margin: 20px 0 10px;
@@ -329,11 +324,36 @@ body {
 
     .b-left {
       width: 49.5%;
+      position: relative;
       display: inline-block;
       padding: 0 10px 20px 0;
       vertical-align: top;
 
+      .e-profile-picture {
+        width: 365px;
+        max-height: 365px;
+      }
+
+      .e-open-quotes {
+        position: absolute;
+        margin-top: 10px;
+        left: 15px;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        -o-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      .e-close-quotes {
+        position: absolute;
+        right: 0;
+        margin-top: -25px;
+      }
+
       .m-profile {
+        position: relative;
+        z-index: 2;
         margin: 20px 0 0 30px;
         color: #949494;
         font-size: 22px;
