@@ -8,7 +8,6 @@ import staticjinja
 # We define constants for the deployment.
 cwd = getcwd()
 searchpath = path.join(cwd, "templates")
-outputpath = path.join(cwd, "site")
 
 
 def slugy(x):
@@ -67,7 +66,6 @@ def loadAcademyData():
 
 site = staticjinja.make_site(
     searchpath=searchpath,
-    outpath=outputpath,
     filters={'slugy': lambda x: slugy(x)},
     staticpaths=['static', '../data'],
     contexts=[(r'.*.html', loadAcademyData)]
