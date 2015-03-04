@@ -277,6 +277,17 @@ body {
       font-size: 18px; }
     .b-profile .b-main .b-right .m-bio {
       color: #949494; }
+    .b-profile .b-main .b-right .e-contact-icon {
+      display: inline-block;
+      margin: 7px 7px 15px 0;
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+      border-radius: 50%;
+      color: white;
+      font-size: 28px;
+      text-align: center;
+      background-color: #c90000; }
 
 .reveal-modal-bg {
   background-color: transparent; }

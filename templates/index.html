@@ -113,28 +113,26 @@
                         <h3 class="m-job">{{ person.job }}</h3>
 
                         <div class="b-contact">
-                            {% if person.email %}
-                                <span class="e-email">{{ person.email }}</span>
-                            {% endif %}
+                            {% if person.contact %}
+                                {% if person.contact.email %}
+                                    <a href="mailto:{{ person.contact.email }}" class="e-contact-icon"><i class="fa fa-envelope"></i></a>
+                                {% endif %}
 
-                            {% if person.facebook %}
-                                <span class="e-facebook">{{ person.facebook }}</span>
-                            {% endif %}
+                                {% if person.contact.facebook %}
+                                    <a href="{{ person.contact.facebook }}" class="e-contact-icon"><i class="fa fa-facebook"></i></a>
+                                {% endif %}
 
-                            {% if person.linkedin %}
-                                <span class="e-linkedin">{{ person.linkedin }}</span>
-                            {% endif %}
+                                {% if person.contact.linkedin %}
+                                    <a href="{{ person.contact.linkedin }}" class="e-contact-icon"><i class="fa fa-linkedin"></i></a>
+                                {% endif %}
 
-                            {% if person.twitter %}
-                                <span class="e-twitter">{{ person.twitter }}</span>
-                            {% endif %}
+                                {% if person.contact.twitter %}
+                                    <a href="{{ person.contact.twitter }}" class="e-contact-icon"><i class="fa fa-twitter"></i></a>
+                                {% endif %}
 
-                            {% if person.gplus %}
-                                <span class="e-gplus">{{ person.gplus }}</span>
-                            {% endif %}
-
-                            {% if person.website %}
-                                <span class="e-website">{{ person.website }}</span>
+                                {% if person.contact.website %}
+                                    <a href="{{ person.contact.website }}" class="e-contact-icon"><i class="fa fa-home"></i></a>
+                                {% endif %}
                             {% endif %}
                         </div>
 
