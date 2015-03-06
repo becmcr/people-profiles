@@ -53,7 +53,7 @@
                     <div class="b-cards-wrapper column large-12">
                         {% for person in people %}
                             <div class="b-card" data-filters="{{ person.filters }}">
-                                <a href="#" class="e-card-picture" style="background-image: url(./static/img/{{ person.image }})" data-reveal-id="profile-{{ loop.index }}">
+                                <a href="#" class="e-card-picture" style="background-image: url(./static/img/profiles/{{ person.image }})" data-reveal-id="profile-{{ loop.index }}">
                                     <h2>{{ person.name }} {{ person.last }}</h2>
                                 </a>
 
@@ -101,7 +101,7 @@
 
                 <div class="b-main">
                     <div class="b-left">
-                        <img class="e-profile-picture" src="./static/img/{{ person.image }}" alt="Profile picture">
+                        <img class="e-profile-picture" src="./static/img/profiles/{{ person.image }}" alt="Profile picture">
 
                         <img class="e-open-quotes" src="./static/img/quotes.png" alt="Open quotes">
                         <p class="m-profile">{{ person.profile }}</p>

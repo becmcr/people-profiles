@@ -11,7 +11,7 @@ searchpath = path.join(cwd, "templates")
 
 
 def slugy(x):
-    return str(slugify(unicode(x)))
+    return slugify(x.decode('utf-8')).encode('ascii')
 
 
 def loadAcademyData():
@@ -54,6 +54,7 @@ def loadAcademyData():
             else:
                 dic[key] = val
 
+        dic['image'] = slugy(dic['name'] + '-' + dic['last']).title() + '.jpg'
         dic['filters'] = ' '.join(dic['filters'])
 
         ctx['people'].append(dic)
