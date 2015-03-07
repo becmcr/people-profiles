@@ -1,8 +1,35 @@
 from os import getcwd, path
+from csv import reader
 from yaml import load
 from slugify import slugify
 from collections import defaultdict
 import staticjinja
+
+
+_MAP = {
+    'Entry Id': 'entry_id',
+    'Name': 'name',
+    'Last': 'last',
+    'Profile Header Sentence': 'profile',
+    'Bio': 'bio',
+    'Educational Experience': 'experience',
+    'Affiliation': 'affiliation',
+    'Year': 'year',
+    'Current Role and Organization/Employer': 'role',
+    'City': 'city',
+    'State / Province': 'state',
+    'Country': 'country',
+    'Email': 'email',
+    'Facebook': 'facebook',
+    'LinkedIn': 'linkedin',
+    'Twitter': 'twitter',
+    'Instagram': 'instagram',
+    'Personal / Venture Website': 'website',
+    'Date Created': 'created',
+    'N-AK-data': 'impact_areas',
+    'AL-BT-data': 'expertise',
+    'BU-CE-data': 'geographic_interest'
+}
 
 
 # We define constants for the deployment.
@@ -19,45 +46,47 @@ def loadAcademyData():
     lists = ['impact_areas', 'expertise', 'geographic_interest']
 
     for person in load(open('data/people.yaml')):
+        img_url = lambda x, y: slugy(x + '-' + y).title() + '.jpg'
         dic = {'filters': set()}
 
-        for key in person.keys():
-            key = key.lower()
-            val = person[key] or '&nbsp;'
+        if str(person['Entry Id']).strip():
+            for k in [x for x in person.keys() if x in _MAP]:
+                val = person[k] or ''
+                key = _MAP[k]
 
-            if key.lower() == 'year':
-                dic[key] = str(val)
+                if isinstance(val, str):
+                    val = '' if val == '@' else val.strip()
 
-                dic['filters'].add(str(val))
-                ctx['filters']['year'].add(str(val))
+                if key == 'year':
+                    dic[key] = str(val)
 
-            elif key == 'affiliation':
-                dic[key] = val
+                    dic['filters'].add(str(val))
+                    ctx['filters']['year'].add(str(val))
 
-                dic['filters'].add(slugy(val))
-                ctx['filters']['affiliation'].add(val)
+                elif key == 'affiliation':
+                    dic[key] = val
 
-            elif key in lists:
-                lst = []
+                    dic['filters'].add(slugy(val))
+                    ctx['filters']['affiliation'].add(val)
 
-                if isinstance(val, list):
-                    lst = val
+                elif key in lists:
+                    lst = []
+
+                    for split in reader([val]):
+                        lst.extend([x.strip() for x in split if x.strip()])
+
+                    dic[key] = lst
+
+                    dic['filters'].update([slugy(x) for x in lst])
+                    ctx['filters'][key].update(lst)
 
                 else:
-                    lst = [val]
+                    dic[key] = val
 
-                dic[key] = lst
+            dic['image'] = img_url(dic['name'], dic['last'])
+            dic['filters'] = ' '.join(dic['filters'])
 
-                dic['filters'].update([slugy(x) for x in lst])
-                ctx['filters'][key].update(lst)
-
-            else:
-                dic[key] = val
-
-        dic['image'] = slugy(dic['name'] + '-' + dic['last']).title() + '.jpg'
-        dic['filters'] = ' '.join(dic['filters'])
-
-        ctx['people'].append(dic)
+            ctx['people'].append(dic)
 
     for key in ctx['filters'].keys():
         ctx['filters'][key] = sorted(list(ctx['filters'][key]))

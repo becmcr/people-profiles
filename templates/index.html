@@ -58,7 +58,7 @@
                                 </a>
 
                                 <h3>{{ person.affiliation }}</h3>
-                                <h4>{{ person.job }}</h4>
+                                <h4>{{ person.role }}</h4>
                                 <p>{{ person.profile }}</p>
                             </div>
                         {% endfor %}
@@ -110,29 +110,27 @@
 
                     <div class="b-right">
                         <h2 class="m-name">{{ person.name }} {{ person.last }}</h2>
-                        <h3 class="m-job">{{ person.job }}</h3>
+                        <h3 class="m-role">{{ person.role }}</h3>
 
                         <div class="b-contact">
-                            {% if person.contact %}
-                                {% if person.contact.email %}
-                                    <a href="mailto:{{ person.contact.email }}" class="e-contact-icon"><i class="fa fa-envelope"></i></a>
-                                {% endif %}
+                            {% if person.email %}
+                                <a href="mailto:{{ person.email }}" class="e-contact-icon"><i class="fa fa-envelope"></i></a>
+                            {% endif %}
 
-                                {% if person.contact.facebook %}
-                                    <a href="{{ person.contact.facebook }}" class="e-contact-icon"><i class="fa fa-facebook"></i></a>
-                                {% endif %}
+                            {% if person.facebook %}
+                                <a href="{{ person.facebook }}" class="e-contact-icon"><i class="fa fa-facebook"></i></a>
+                            {% endif %}
 
-                                {% if person.contact.linkedin %}
-                                    <a href="{{ person.contact.linkedin }}" class="e-contact-icon"><i class="fa fa-linkedin"></i></a>
-                                {% endif %}
+                            {% if person.linkedin %}
+                                <a href="{{ person.linkedin }}" class="e-contact-icon"><i class="fa fa-linkedin"></i></a>
+                            {% endif %}
 
-                                {% if person.contact.twitter %}
-                                    <a href="{{ person.contact.twitter }}" class="e-contact-icon"><i class="fa fa-twitter"></i></a>
-                                {% endif %}
+                            {% if person.twitter %}
+                                <a href="{{ person.twitter }}" class="e-contact-icon"><i class="fa fa-twitter"></i></a>
+                            {% endif %}
 
-                                {% if person.contact.website %}
-                                    <a href="{{ person.contact.website }}" class="e-contact-icon"><i class="fa fa-home"></i></a>
-                                {% endif %}
+                            {% if person.website %}
+                                <a href="{{ person.website }}" class="e-contact-icon"><i class="fa fa-home"></i></a>
                             {% endif %}
                         </div>
 
