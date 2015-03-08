@@ -170,23 +170,44 @@ body {
 
   .e-filter-tag {
     display: inline-block;
-    padding: 5px 12px 4px;
+    padding: 5px 12px 6px;
     border-radius: 2px;
     line-height: 1;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.1);
+    background-color: #eee;
+    // background-color: rgba(0,0,0,0.1);
     color: rgb(0,0,0);
     color: rgba(0,0,0,0.8);
     cursor: pointer;
 
+    .fa {
+      margin-left: 13px;
+      width: 14px;
+      opacity: .15;
+    }
+
     &:hover {
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.3);
+      background-color: #ddd;
+      // background-color: rgba(0,0,0,0.2);
+
+      .fa { opacity: 1; }
     }
 
     &.m-active {
-      background-color: $red;
+      background-color: green;
       color: white;
+
+      .fa { 
+        opacity: .4; 
+        &:before { content: "\f00c"}
+      }
+
+      &:hover {
+        .fa { opacity: 1; }
+        .fa:before { content: "\f00d"; }
+      }
+
+      
+      
     }
   }
 }
@@ -287,6 +308,8 @@ body {
     background-color: transparent;
     border: 0;
     box-shadow: none;
+    left: -20px;
+    right: -10px;
   }
 
   .b-side-bar {
@@ -298,6 +321,7 @@ body {
     background-color: rgb(255,255,255);
     background-color: rgba(255,255,255,0.95);
     text-align: right;
+    @include dropshadow;
 
     .m-title {
       margin: 20px 0 10px;
@@ -331,7 +355,9 @@ body {
 
       .e-profile-picture {
         width: 365px;
-        max-height: 365px;
+        height: 365px;
+        background-size: cover;
+        background-position: center center;
       }
 
       .e-open-quotes {
@@ -368,6 +394,8 @@ body {
       padding: 20px;
       vertical-align: top;
 
+
+
       .m-name {
         color: #c90000;
         font-weight: 300;
@@ -375,7 +403,7 @@ body {
 
       .m-role {
         color: #949494;
-        font-weight: bold;
+        font-weight: 300;
         font-size: 18px;
       }
 
@@ -391,14 +419,20 @@ body {
         line-height: 44px;
         border-radius: 50%;
         color: white;
-        font-size: 28px;
         text-align: center;
         background-color: #c90000;
+
+        .fa {
+          font-size: 1.3rem;
+          text-rendering: optimizeLegibility;
+        }
+
+        .fa-envelope { font-size: 1.2rem; }
       }
     }
   }
 }
 
 .reveal-modal-bg {
-  background-color: transparent;
+  background-color: rgba(255,255,255,0.7);
 }

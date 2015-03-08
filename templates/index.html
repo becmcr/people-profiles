@@ -9,7 +9,7 @@
                     <h2 class="m-filter-name">Year</h2>
 
                     {% for year in filters.year %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ year|slugy }}]">{{ year }}</span></div>
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ year|slugy }}]">{{ year }}<i class="fa fa-plus"></i></span></div>
                     {% endfor %}
                 {% endif %}
 
@@ -17,7 +17,7 @@
                     <h2 class="m-filter-name">Affiliation</h2>
 
                     {% for affiliation in filters.affiliation %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ affiliation|slugy }}]">{{ affiliation }}</span></div>
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ affiliation|slugy }}]">{{ affiliation }}<i class="fa fa-plus"></i></span></div>
                     {% endfor %}
                 {% endif %}
 
@@ -25,7 +25,7 @@
                     <h2 class="m-filter-name">Impact Areas</h2>
 
                     {% for area in filters.impact_areas %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ area|slugy }}]">{{ area }}</span></div>
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ area|slugy }}]">{{ area }}<i class="fa fa-plus"></i></span></div>
                     {% endfor %}
                 {% endif %}
 
@@ -33,7 +33,7 @@
                     <h2 class="m-filter-name">Expertise</h2>
 
                     {% for expertise in filters.expertise %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ expertise|slugy }}]">{{ expertise }}</span></div>
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ expertise|slugy }}]">{{ expertise }}<i class="fa fa-plus"></i></span></div>
                     {% endfor %}
                 {% endif %}
 
@@ -41,7 +41,7 @@
                     <h2 class="m-filter-name">Geographic Interest</h2>
 
                     {% for interest in filters.geographic_interest %}
-                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ interest|slugy }}]">{{ interest }}</span></div>
+                        <div class="b-item"><span class="e-filter-tag" data-filter="[data-filters~={{ interest|slugy }}]">{{ interest }}<i class="fa fa-plus"></i></span></div>
                     {% endfor %}
                 {% endif %}
             </aside>
@@ -101,7 +101,7 @@
 
                 <div class="b-main">
                     <div class="b-left">
-                        <img class="e-profile-picture" src="./static/img/profiles/{{ person.image }}" alt="Profile picture">
+                        <div class="e-profile-picture" style="background-image: url(./static/img/profiles/{{ person.image }})" alt="{{ person.name }} {{ person.last }}"></div>
 
                         <img class="e-open-quotes" src="./static/img/quotes.png" alt="Open quotes">
                         <p class="m-profile">{{ person.profile }}</p>
@@ -114,23 +114,23 @@
 
                         <div class="b-contact">
                             {% if person.email %}
-                                <a href="mailto:{{ person.email }}" class="e-contact-icon"><i class="fa fa-envelope"></i></a>
+                                <a href="mailto:{{ person.email }}" class="e-contact-icon" alt="Email"><i class="fa fa-envelope"></i></a>
                             {% endif %}
 
                             {% if person.facebook %}
-                                <a href="{{ person.facebook }}" class="e-contact-icon"><i class="fa fa-facebook"></i></a>
+                                <a href="{{ person.facebook }}" class="e-contact-icon" alt="Facebook"  ><i class="fa fa-facebook"></i></a>
                             {% endif %}
 
                             {% if person.linkedin %}
-                                <a href="{{ person.linkedin }}" class="e-contact-icon"><i class="fa fa-linkedin"></i></a>
+                                <a href="{{ person.linkedin }}" class="e-contact-icon" alt="LinkedIn"><i class="fa fa-linkedin"></i></a>
                             {% endif %}
 
                             {% if person.twitter %}
-                                <a href="{{ person.twitter }}" class="e-contact-icon"><i class="fa fa-twitter"></i></a>
+                                <a href="{{ person.twitter }}" class="e-contact-icon" alt="Twitter"><i class="fa fa-twitter"></i></a>
                             {% endif %}
 
                             {% if person.website %}
-                                <a href="{{ person.website }}" class="e-contact-icon"><i class="fa fa-home"></i></a>
+                                <a href="{{ person.website }}" class="e-contact-icon" alt="Website"><i class="fa fa-home"></i></a>
                             {% endif %}
                         </div>
 
