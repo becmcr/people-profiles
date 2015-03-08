@@ -4,6 +4,9 @@ body {
   background-color: rgba(0, 0, 0, 0.03);
   overflow-y: scroll; }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
 .b-top-header {
   top: 0;
   width: 100%;
@@ -26,6 +29,8 @@ body {
       max-height: 60px; }
   .b-top-header nav {
     width: 70%;
+    height: 100%;
+    overflow: hidden;
     display: inline-block;
     padding: 0 10px;
     text-align: right;
@@ -82,15 +87,15 @@ body {
     background-color: transparent;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35); }
 .b-content.move-right .inner-wrap {
-  -webkit-transform: translate3d(18rem, 0, 0);
-  -moz-transform: translate3d(18rem, 0, 0);
-  -ms-transform: translate3d(18rem, 0, 0);
-  -o-transform: translate3d(18rem, 0, 0);
-  transform: translate3d(18rem, 0, 0); }
+  -webkit-transform: translate3d(350px, 0, 0);
+  -moz-transform: translate3d(350px, 0, 0);
+  -ms-transform: translate3d(350px, 0, 0);
+  -o-transform: translate3d(350px, 0, 0);
+  transform: translate3d(350px, 0, 0); }
 
 .b-offcanvas {
-  width: 18rem;
-  padding: 80px 20px 20px;
+  width: 310px;
+  padding: 80px 22px 20px 18px;
   overflow: hidden;
   background-color: white;
   text-align: right; }
@@ -105,20 +110,32 @@ body {
     margin-top: 10px; }
   .b-offcanvas .e-filter-tag {
     display: inline-block;
-    padding: 5px 12px 4px;
+    padding: 5px 12px 6px;
     border-radius: 2px;
     line-height: 1;
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #eee;
     color: black;
     color: rgba(0, 0, 0, 0.8);
     cursor: pointer; }
+    .b-offcanvas .e-filter-tag .fa {
+      margin-left: 13px;
+      width: 14px;
+      opacity: .15; }
     .b-offcanvas .e-filter-tag:hover {
-      background-color: black;
-      background-color: rgba(0, 0, 0, 0.3); }
+      background-color: #ddd; }
+      .b-offcanvas .e-filter-tag:hover .fa {
+        opacity: 1; }
     .b-offcanvas .e-filter-tag.m-active {
-      background-color: #9D2232;
+      background-color: green;
       color: white; }
+      .b-offcanvas .e-filter-tag.m-active .fa {
+        opacity: .4; }
+        .b-offcanvas .e-filter-tag.m-active .fa:before {
+          content: "\f00c"; }
+      .b-offcanvas .e-filter-tag.m-active:hover .fa {
+        opacity: 1; }
+      .b-offcanvas .e-filter-tag.m-active:hover .fa:before {
+        content: "\f00d"; }
 
 .b-main-section {
   padding: 20px 0 30px; }
@@ -146,12 +163,14 @@ body {
 
 .b-card {
   width: 23.6%;
+  min-width: 190px;
   display: inline-block;
   border: 1px solid black;
   border: 1px solid rgba(0, 0, 0, 0.3);
   margin: 0 13px 20px 0;
   background-color: white;
   vertical-align: top;
+  overflow: hidden;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); }
   .b-card h3 {
     margin: 10px 20px;
@@ -206,7 +225,9 @@ body {
   padding: 0;
   background-color: transparent;
   border: 0;
-  box-shadow: none; }
+  box-shadow: none;
+  left: -20px;
+  right: -10px; }
 .b-profile .b-side-bar {
   display: inline-block;
   width: 23%;
@@ -215,7 +236,8 @@ body {
   border: 1px solid #bbb;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.95);
-  text-align: right; }
+  text-align: right;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2); }
   .b-profile .b-side-bar .m-title {
     margin: 20px 0 10px;
     color: #9D2232;
@@ -241,7 +263,9 @@ body {
     vertical-align: top; }
     .b-profile .b-main .b-left .e-profile-picture {
       width: 365px;
-      max-height: 365px; }
+      height: 365px;
+      background-size: cover;
+      background-position: center center; }
     .b-profile .b-main .b-left .e-open-quotes {
       position: absolute;
       margin-top: 10px;
@@ -273,7 +297,7 @@ body {
       font-weight: 300; }
     .b-profile .b-main .b-right .m-role {
       color: #949494;
-      font-weight: bold;
+      font-weight: 300;
       font-size: 18px; }
     .b-profile .b-main .b-right .m-bio {
       color: #949494; }
@@ -285,11 +309,15 @@ body {
       line-height: 44px;
       border-radius: 50%;
       color: white;
-      font-size: 28px;
       text-align: center;
       background-color: #c90000; }
+      .b-profile .b-main .b-right .e-contact-icon .fa {
+        font-size: 1.3rem;
+        text-rendering: optimizeLegibility; }
+      .b-profile .b-main .b-right .e-contact-icon .fa-envelope {
+        font-size: 1.2rem; }
 
 .reveal-modal-bg {
-  background-color: transparent; }
+  background-color: rgba(255, 255, 255, 0.7); }
 
 /*# sourceMappingURL=styles.css.map */

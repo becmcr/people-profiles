@@ -1,40 +1,7 @@
-from os import getcwd, path
-from csv import reader
 from yaml import load
 from slugify import slugify
 from collections import defaultdict
-import staticjinja
-
-
-_MAP = {
-    'Entry Id': 'entry_id',
-    'Name': 'name',
-    'Last': 'last',
-    'Profile Header Sentence': 'profile',
-    'Bio': 'bio',
-    'Educational Experience': 'experience',
-    'Affiliation': 'affiliation',
-    'Year': 'year',
-    'Current Role and Organization/Employer': 'role',
-    'City': 'city',
-    'State / Province': 'state',
-    'Country': 'country',
-    'Email': 'email',
-    'Facebook': 'facebook',
-    'LinkedIn': 'linkedin',
-    'Twitter': 'twitter',
-    'Instagram': 'instagram',
-    'Personal / Venture Website': 'website',
-    'Date Created': 'created',
-    'N-AK-data': 'impact_areas',
-    'AL-BT-data': 'expertise',
-    'BU-CE-data': 'geographic_interest'
-}
-
-
-# We define constants for the deployment.
-cwd = getcwd()
-searchpath = path.join(cwd, "templates")
+from staticjinja import make_site
 
 
 def slugy(x):
@@ -42,51 +9,43 @@ def slugy(x):
 
 
 def loadAcademyData():
-    ctx = {'people': [], 'resources': None, 'filters': defaultdict(set)}
-    lists = ['impact_areas', 'expertise', 'geographic_interest']
+    ctx = {'people': [], 'filters': defaultdict(set)}
 
     for person in load(open('data/people.yaml')):
-        img_url = lambda x, y: slugy(x + '-' + y).title() + '.jpg'
-        dic = {'filters': set()}
+        person['filters'] = set()
 
-        if str(person['Entry Id']).strip():
-            for k in [x for x in person.keys() if x in _MAP]:
-                val = person[k] or ''
-                key = _MAP[k]
+        if person['year']:
+            person['filters'].add(str(person['year']))
 
-                if isinstance(val, str):
-                    val = '' if val == '@' else val.strip()
+            ctx['filters']['year'].add(str(person['year']))
 
-                if key == 'year':
-                    dic[key] = str(val)
+        if person['affiliation']:
+            person['filters'].add(slugy(person['affiliation']))
 
-                    dic['filters'].add(str(val))
-                    ctx['filters']['year'].add(str(val))
+            ctx['filters']['affiliation'].add(person['affiliation'])
 
-                elif key == 'affiliation':
-                    dic[key] = val
+        if person['impact_areas']:
+            lst = [slugy(x) for x in person['impact_areas']]
 
-                    dic['filters'].add(slugy(val))
-                    ctx['filters']['affiliation'].add(val)
+            person['filters'].update(lst)
 
-                elif key in lists:
-                    lst = []
+            ctx['filters']['impact_areas'].update(person['impact_areas'])
 
-                    for split in reader([val]):
-                        lst.extend([x.strip() for x in split if x.strip()])
+        if person['expertise']:
+            person['filters'].update([slugy(x) for x in person['expertise']])
 
-                    dic[key] = lst
+            ctx['filters']['expertise'].update(person['expertise'])
 
-                    dic['filters'].update([slugy(x) for x in lst])
-                    ctx['filters'][key].update(lst)
+        if person['geographic_interest']:
+            val = person['geographic_interest']
 
-                else:
-                    dic[key] = val
+            person['filters'].update([slugy(x) for x in val])
 
-            dic['image'] = img_url(dic['name'], dic['last'])
-            dic['filters'] = ' '.join(dic['filters'])
+            ctx['filters']['geographic_interest'].update(val)
 
-            ctx['people'].append(dic)
+        person['filters'] = ' '.join(person['filters'])
+
+        ctx['people'].append(person)
 
     for key in ctx['filters'].keys():
         ctx['filters'][key] = sorted(list(ctx['filters'][key]))
@@ -94,8 +53,7 @@ def loadAcademyData():
     return ctx
 
 
-site = staticjinja.make_site(
-    searchpath=searchpath,
+site = make_site(
     filters={'slugy': lambda x: slugy(x)},
     staticpaths=['static', '../data'],
     contexts=[(r'.*.html', loadAcademyData)]

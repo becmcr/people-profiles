@@ -33,6 +33,10 @@ body {
   overflow-y: scroll;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'proxima-nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 .b-top-header {
   top: 0;
   width: 100%;
@@ -60,6 +64,8 @@ body {
 
   nav {
     width: 70%;
+    height: 100%;
+    overflow: hidden;
     display: inline-block;
     padding: 0 10px;
     text-align: right;
@@ -140,20 +146,21 @@ body {
   }
 
   &.move-right .inner-wrap {
-    -webkit-transform: translate3d(18rem, 0, 0);
-    -moz-transform: translate3d(18rem, 0, 0);
-    -ms-transform: translate3d(18rem, 0, 0);
-    -o-transform: translate3d(18rem, 0, 0);
-    transform: translate3d(18rem, 0, 0);
+    -webkit-transform: translate3d(350px, 0, 0);
+    -moz-transform: translate3d(350px, 0, 0);
+    -ms-transform: translate3d(350px, 0, 0);
+    -o-transform: translate3d(350px, 0, 0);
+    transform: translate3d(350px, 0, 0);
   }
 }
 
 .b-offcanvas {
-  width: 18rem;
-  padding: 80px 20px 20px;
+  width: 310px;
+  padding: 80px 22px 20px 18px;
   overflow: hidden;
   background-color: white;
   text-align: right;
+  $off-canvas-width: rem-calc(250) !default;
 
   .m-filter-name {
     min-width: 100px;
@@ -196,8 +203,8 @@ body {
       background-color: green;
       color: white;
 
-      .fa { 
-        opacity: .4; 
+      .fa {
+        opacity: .4;
         &:before { content: "\f00c"}
       }
 
@@ -206,8 +213,8 @@ body {
         .fa:before { content: "\f00d"; }
       }
 
-      
-      
+
+
     }
   }
 }
@@ -244,12 +251,14 @@ body {
 
 .b-card {
   width: 23.6%;
+  min-width: 190px;
   display: inline-block;
   border: 1px solid rgb(0,0,0);
   border: 1px solid rgba(0,0,0,0.3);
   margin: 0 13px 20px 0;
   background-color: white;
   vertical-align: top;
+  overflow: hidden;
   @include dropshadow;
 
   h3 {
