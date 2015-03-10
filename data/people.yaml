@@ -50,7 +50,9 @@
   twitter: ''
   website: ''
   year: '2014'
-- affiliation: Staff, PSIH Fellow
+- affiliation: 
+  -Staff 
+  -PSIH Fellow
   bio: Arielle Brousse is a nine-year veteran of the Philadelphia nonprofit scene,
     with her work focusing on development and donor communications. She believes strongly
     in the efficacy of using storytelling principles to connect philanthropists with
@@ -630,7 +632,9 @@
   twitter: ''
   website: ''
   year: '2013'
-- affiliation: Staff, PSIH Fellow
+- affiliation: 
+  -Staff 
+  -PSIH Fellow
   bio: Gray Garmon is a Visiting Clinical Professor in the Master of Design and Innovation
     program in the Caruth Institute for Engineering Education at the Lyle School of
     Engineering at Southern Methodist University. He has a Master of Architecture
@@ -1420,7 +1424,9 @@
   twitter: ''
   website: ''
   year: '2013'
-- affiliation: Staff, PSIH Fellow
+- affiliation: 
+  -Staff 
+  -PSIH Fellow
   bio: 10+ years working for non-profits focused on innovation, creating networks
     of sustainable micro-communities and hosting crafted gatherings. During my Masters,
     I found a home in the social enterprise space, combining my love for making an
